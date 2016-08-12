@@ -1,3 +1,58 @@
-<h1>
-  employers works!
-</h1>
+<!--<h1>-->
+  <!--employers works!-->
+<!--</h1>-->
+
+<br>
+
+<div class="row">
+  <div class="row-xs-12">
+
+    <form [formGroup]="employerForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="row-xs-12">
+          <div class="form-group">
+            <label for="label">Nome</label>
+            <input id="label" name="label" type="text" class="form-control" formControlName="label">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="row-xs-12">
+          <div class="form-group">
+            <label for="info">Informação</label>
+            <input id="info" name="info" type="text" class="form-control" formControlName="info">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="row-xs-12">
+          <div class="form-group">
+            <label for="lat">Latitude</label>
+            <input id="lat" name="lat" type="text" class="form-control" formControlName="lat">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="row-xs-12">
+          <div class="form-group">
+            <label for="lng">Longitude</label>
+            <input id="lng" name="lng" type="text" class="form-control" formControlName="lng">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <button type="submit" class="btn btn-success">Salvar</button>
+          </div>
+        </div>
+      </div>
+
+    </form>
+
+  </div>
+</div>

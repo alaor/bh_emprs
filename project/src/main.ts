@@ -1,5 +1,6 @@
 import { bootstrap } from '@angular/platform-browser-dynamic';
 import { enableProdMode } from '@angular/core';
+import { provideForms, disableDeprecatedForms } from "@angular/forms";
 import { AppComponent, environment } from './app/';
 
 import { appRouterProviders } from './app/app.routes';
@@ -10,4 +11,4 @@ if (environment.production) {
   enableProdMode();
 }
 
-bootstrap(AppComponent, [GOOGLE_MAPS_PROVIDERS, appRouterProviders]);
+bootstrap(AppComponent, [  provideForms(), disableDeprecatedForms(), GOOGLE_MAPS_PROVIDERS, appRouterProviders]);
