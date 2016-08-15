@@ -56,3 +56,25 @@
 
   </div>
 </div>
+
+<div class="row">
+  <div class="row-xs-12">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Informação</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let e of employers">
+        <td>{{e.info}}</td>
+        <td>{{e.lat}}</td>
+        <td>{{e.lng}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
