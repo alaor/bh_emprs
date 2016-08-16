@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 import {
   FormGroup,
   FormBuilder,
@@ -21,7 +21,7 @@ export class EmployersComponent implements OnInit {
   employerForm : FormGroup;
   employers: any[] = [];
 
-  constructor(private formBuilder: FormBuilder, private employersService: EmployersService) { }
+  constructor(private formBuilder: FormBuilder, private employersService: EmployersService, private router: Router) { }
 
   ngOnInit() {
     this.initForm();
@@ -44,17 +44,18 @@ export class EmployersComponent implements OnInit {
   }
 
   onSubmit(){
-    console.log('enviar...');
-    console.log(this.employerForm.value);
 
     this.employersService.sendData(this.employerForm.value)
       .subscribe(
-        data => console.log(data),
+        data => {
+          console.log(data);
+          this.router.navigate(['/home']);
+        },
         error => console.log(error)
       );
   }
 
-  private initForm() {
+  initForm(){
     this.employerForm = this.formBuilder.group({
       label: new FormControl(null),
       info : new FormControl(null),
